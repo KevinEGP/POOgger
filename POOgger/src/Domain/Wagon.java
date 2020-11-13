@@ -1,4 +1,4 @@
-package Package Diagram.Domain;
+package Domain;
 
 public class Wagon extends Movable {
 
@@ -7,6 +7,12 @@ public class Wagon extends Movable {
 	}
 
 	public void move() {
+
+	}
+
+	@Override
+	public void affect() {
+		// TODO Auto-generated method stub
 
 	}
 
