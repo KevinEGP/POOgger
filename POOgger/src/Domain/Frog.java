@@ -1,4 +1,4 @@
-package Package Diagram.Domain;
+package Domain;
 
 public class Frog extends Movable {
 
@@ -25,6 +25,12 @@ public class Frog extends Movable {
 	}
 
 	public void slide(boolean isToRight, int velocity, int distance) {
+
+	}
+
+	@Override
+	public void move() {
+		// TODO Auto-generated method stub
 
 	}
 

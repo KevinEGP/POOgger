@@ -1,4 +1,4 @@
-package Package Diagram.Domain;
+package Domain;
 
 public class FemaleFrog extends Consumable {
 
@@ -7,6 +7,12 @@ public class FemaleFrog extends Consumable {
 	}
 
 	public void move() {
+
+	}
+
+	@Override
+	public void activate() {
+		// TODO Auto-generated method stub
 
 	}
 

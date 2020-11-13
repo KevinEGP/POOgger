@@ -1,4 +1,4 @@
-package Package Diagram.Domain;
+package Domain;
 
 public abstract class Component {
 

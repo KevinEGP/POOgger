@@ -1,4 +1,4 @@
-package Package Diagram.Domain;
+package Domain;
 
 public class Home extends Component {
 
@@ -8,6 +8,12 @@ public class Home extends Component {
 
 	public boolean take() {
 		return false;
+	}
+
+	@Override
+	public void affect() {
+		// TODO Auto-generated method stub
+
 	}
 
 }
