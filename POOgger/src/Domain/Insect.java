@@ -2,6 +2,10 @@ package Domain;
 
 public class Insect extends Consumable {
 
+	public Insect(int xPos, int yPos, int WIDTH, int HEIGHT) {
+		super(xPos, yPos, 50, 33);
+	}
+
 	public void affect() {
 
 	}
@@ -10,10 +14,7 @@ public class Insect extends Consumable {
 
 	}
 
-	@Override
 	public void activate() {
-		// TODO Auto-generated method stub
 
 	}
-
 }

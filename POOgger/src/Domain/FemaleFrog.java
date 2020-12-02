@@ -2,6 +2,10 @@ package Domain;
 
 public class FemaleFrog extends Consumable {
 
+	public FemaleFrog(int xPos, int yPos, int WIDTH, int HEIGHT) {
+		super(xPos, yPos, 37, 50);
+	}
+
 	public void affect() {
 
 	}
@@ -10,9 +14,7 @@ public class FemaleFrog extends Consumable {
 
 	}
 
-	@Override
 	public void activate() {
-		// TODO Auto-generated method stub
 
 	}
 

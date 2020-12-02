@@ -1,49 +1,37 @@
 package Presentation;
 
-import java.awt.BorderLayout;
-import java.awt.Canvas;
-import java.awt.Dimension;
+import java.awt.Container;
+import java.awt.FlowLayout;
 
+import javax.swing.ImageIcon;
 import javax.swing.JFrame;
-import javax.swing.JOptionPane;
 
-public class POOggerGUI extends Canvas implements Runnable {
+public class POOggerGUI extends JFrame {
 
 	private static final long serialVersionUID = 1L;
-	private static final int WIDTH = 745, HEIGHT = 745;
-	private static final String WINDOWNAME = "POOGGER";
-	private static JFrame windowGame;
-
-	private static Thread thread;
+	private Container container;
+	private BackGroundFormat gameBackGround;
 
 	private POOggerGUI() {
-		setPreferredSize(new Dimension(WIDTH, HEIGHT));
-		windowGame = new JFrame(WINDOWNAME);
-		windowGame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		windowGame.setResizable(false);
-		windowGame.setLayout(new BorderLayout());
-		windowGame.add(this, BorderLayout.CENTER);
-		windowGame.pack();
-		windowGame.setLocationRelativeTo(null);
-		windowGame.setVisible(true);
+		super("POOGGER");
+		setSize(745 + 18, 745 + 45);
+		container = getContentPane();
+		setResizable(false);
+		setLocationRelativeTo(null);
+		prepareElementos();
 	}
 
-	private void begin() {
-		thread = new Thread(this, "GUI Execution");
-		thread.start();
-	}
-
-	private void stop() {
-
-	}
-
-	@Override
-	public void run() {
-		JOptionPane.showMessageDialog(this, "Thread is Active");
+	private void prepareElementos() {
+		setIconImage(new ImageIcon(getClass().getResource("/Resources/Icon/Icon.png")).getImage());
+		gameBackGround = new BackGroundFormat();
+		gameBackGround.setLayout(new FlowLayout());
+		gameBackGround.setBackground(new ImageIcon(getClass().getResource("/Resources/Maps/AtDay/MapDay.jpg")));
+		container.add(gameBackGround);
 	}
 
 	public static void main(String[] args) {
 		POOggerGUI pooggerGUI = new POOggerGUI();
-		pooggerGUI.begin();
+		pooggerGUI.setVisible(true);
 	}
+
 }
