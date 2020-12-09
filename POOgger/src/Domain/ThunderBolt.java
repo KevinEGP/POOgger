@@ -2,10 +2,12 @@ package Domain;
 
 public class ThunderBolt extends Component {
 
-	@Override
-	public void affect() {
-		// TODO Auto-generated method stub
-
+	public ThunderBolt(int xPos, int yPos, int width, int height) {
+		super("ThunderBolt", xPos, yPos, width, height);
 	}
 
+	@Override
+	public void affect(Frog frog) {
+
+	}
 }

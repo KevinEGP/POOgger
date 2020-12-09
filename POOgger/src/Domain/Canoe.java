@@ -1,15 +1,9 @@
 package Domain;
 
-public class Vehicle extends Movable {
-
-	public Vehicle(String name) {
-		super(name, 745, 750, 123, 46, 'L', 2);
-		isVisible = true;
-	}
-	
-
-	void leaveElement(int probability) {
-
+public class Canoe extends Movable{
+	private int color = (int)Math.round(Math.random());
+	public Canoe(String name, int xPos, int yPos, int WIDTH, int HEIGHT) {
+		super(name, xPos, yPos, 0, 0, 'L', 2);
 	}
 
 	@Override
@@ -30,10 +24,13 @@ public class Vehicle extends Movable {
 		}
 		
 	}
-	
+
 	@Override
-	public void affect(Frog frog) {
-		frog.restart();
+	public void affect(Frog g) {
+		if (color == 0) {
+			
+		}
+		
 	}
 
 }

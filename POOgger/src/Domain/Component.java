@@ -1,20 +1,24 @@
 package Domain;
 
 import java.awt.Rectangle;
+import java.io.Serializable;
 
-public abstract class Component {
+public abstract class Component implements Serializable {
 
 	// private int color;
-	private int xPosition;
-	private int yPosition;
-	private final int WIDTH;
-	private final int HEIGHT;
+	protected int xPosition;
+	protected int yPosition;
+	protected final int WIDTH;
+	protected final int HEIGHT;
+	protected final String name;
+	public boolean isVisible;
 
-	public Component(int xPos, int yPos, final int WIDTH, final int HEIGHT) {
+	public Component(String name, int xPos, int yPos, final int WIDTH, final int HEIGHT) {
 		xPosition = xPos;
 		yPosition = yPos;
 		this.WIDTH = WIDTH;
 		this.HEIGHT = HEIGHT;
+		this.name = name;
 	}
 
 	public boolean stillInRange() {
@@ -32,12 +36,12 @@ public abstract class Component {
 		return false;
 	}
 
-	public int[][] getCorners() {
-		int[][] corners = new int[4][2];
-		corners[0] = new int[] { xPosition, yPosition };
-		corners[1] = new int[] { xPosition + WIDTH, yPosition };
-		corners[2] = new int[] { xPosition + WIDTH, yPosition + HEIGHT };
-		corners[3] = new int[] { xPosition, yPosition + HEIGHT };
+	public int[] getCorners() {
+		int[] corners = new int[4];
+		corners[0] = xPosition;
+		corners[1] = yPosition;
+		corners[2] = WIDTH;
+		corners[3] = HEIGHT;
 		return corners;
 	}
 
@@ -45,6 +49,15 @@ public abstract class Component {
 		return new int[] { xPosition, yPosition, WIDTH, HEIGHT };
 	}
 
-	public abstract void affect();
+	public abstract void affect(Frog frog);
+	
+	public String getName() {
+		return name;
+	}
+	
+	public void setPosition(int xPos, int yPos) {
+		xPosition = xPos;
+		yPosition = yPos;
+	}
 
 }

@@ -2,12 +2,20 @@ package Domain;
 
 public abstract class Consumable extends Component {
 
-	public Consumable(int xPos, int yPos, final int WIDTH, final int HEIGHT) {
-		super(xPos, yPos, WIDTH, HEIGHT);
+	private boolean wasUsed;
+
+	public Consumable(String name, int xPos, int yPos, int width, int height) {
+		super(name, xPos, yPos, width, height);
+		setUsed(false);
+	}
+
+	public void setUsed(boolean value) {
+		wasUsed = value;
+	}
+
+	private boolean wasUsed() {
+		return wasUsed;
 	}
 
 	public abstract void activate();
-
-	public abstract void affect();
-
 }

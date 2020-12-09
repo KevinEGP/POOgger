@@ -4,8 +4,8 @@ public class Accelerator extends Consumable {
 
 	private int jumpLength;
 
-	public Accelerator(int xPos, int yPos, int WIDTH, int HEIGHT) {
-		super(xPos, yPos, 118, 46);
+	public Accelerator(int xPos, int yPos) {
+		super("Rocket", xPos, yPos, 118, 46);
 		jumpLength = 100;
 	}
 
@@ -15,7 +15,7 @@ public class Accelerator extends Consumable {
 	}
 
 	@Override
-	public void affect() {
+	public void affect(Frog f) {
 
 	}
 

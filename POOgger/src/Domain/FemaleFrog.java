@@ -3,10 +3,10 @@ package Domain;
 public class FemaleFrog extends Consumable {
 
 	public FemaleFrog(int xPos, int yPos, int WIDTH, int HEIGHT) {
-		super(xPos, yPos, 37, 50);
+		super("FemaleFrog", xPos, yPos, 37, 50);
 	}
 
-	public void affect() {
+	public void affect(Frog frog) {
 
 	}
 
@@ -17,5 +17,4 @@ public class FemaleFrog extends Consumable {
 	public void activate() {
 
 	}
-
 }

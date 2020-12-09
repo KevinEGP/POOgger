@@ -2,16 +2,17 @@ package Domain;
 
 public class Motocycle extends Movable {
 
+	public Motocycle(String name, int xPos, int yPos, int WIDTH, int HEIGHT) {
+		super(name, xPos, yPos, WIDTH, HEIGHT, 'L', 2);
+	}
+
 	@Override
 	public void move() {
-		// TODO Auto-generated method stub
 
 	}
 
 	@Override
-	public void affect() {
-		// TODO Auto-generated method stub
+	public void affect(Frog frog) {
 
 	}
-
 }

@@ -8,7 +8,7 @@ public class myButton extends JButton {
 	
 	public myButton(String name) {
 		super(name);
-		setSize(300,90);
+		setSize(400,90);
 		setOpaque(false);
 		setContentAreaFilled(false);
 		setBorderPainted(false);

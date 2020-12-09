@@ -3,8 +3,7 @@ package Domain;
 public class Radiation extends Consumable {
 
 	public Radiation(int xPos, int yPos, int WIDTH, int HEIGHT) {
-		super(xPos, yPos, WIDTH, HEIGHT);
-		// TODO Auto-generated constructor stub
+		super("Radiation", xPos, yPos, WIDTH, HEIGHT);
 	}
 
 	public void activate() {
@@ -12,9 +11,7 @@ public class Radiation extends Consumable {
 	}
 
 	@Override
-	public void affect() {
-		// TODO Auto-generated method stub
-		
-	}
+	public void affect(Frog frog) {
 
+	}
 }

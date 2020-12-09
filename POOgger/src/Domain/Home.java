@@ -2,23 +2,42 @@ package Domain;
 
 public class Home extends Component {
 
-	public Home(int xPos, int yPos, int WIDTH, int HEIGHT) {
-		super(xPos, yPos, WIDTH, HEIGHT);
-		// TODO Auto-generated constructor stub
+	private boolean isHabitable;
+	private boolean hasBeenTaken;
+	private Component occupator;
+	
+
+	public Home(String name, int xPos, int yPos) {
+		super(name, xPos, yPos, 38, 50);
+		hasBeenTaken = false;
+		isHabitable = true;
+		isVisible = false;
 	}
 
-	private boolean isHabitable;
+	public void setHabitable(boolean b) {
+		isHabitable = b;
+		if (!isHabitable) {
+			generateOccupier();
+		}
+	}
 
-	private boolean hasTaken;
+	public void generateOccupier() {
 
-	public boolean take() {
-		return false;
+	}
+
+	public boolean itsTaken() {
+		return hasBeenTaken;
 	}
 
 	@Override
-	public void affect() {
-		// TODO Auto-generated method stub
-
+	public void affect(Frog frog) {
+		if (isHabitable) {
+			isVisible = true;
+			isHabitable = false;
+			frog.lifes++;
+			POOgger.getPoogger().homes--;
+			frog.restart();
+		}
 	}
 
 }
